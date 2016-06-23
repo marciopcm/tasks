@@ -1,0 +1,54 @@
+	<div class="row" ng-controller="MinCtrl">
+		<div class="col-md-6">
+			
+				<h3>Cadastro de Ministérios</h3>
+				<form action="#">
+					<div class="form-group">
+						<label for="nome">Nome do Ministério ou Cargo</label>
+						<input type="text" class="form-control" id="nome" ng-model="nomeMin" maxlength="50"/>
+					</div>
+				</form>
+				<button type="" class="btn btn-primary">Salvar</button>
+				<button class="btn btn-info" ng-click="nomeMin = ''">Limpar</button>
+		</div>
+	</div>
+
+	<hr>
+
+	<div class="row" ng-controller="MinCtrl">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Registros Cadastrados
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Ministério / Cargo</th>
+                                    <th>Ação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="ministerio in ministerios">
+                                    <td>{{ ministerio.codigo }}</td>
+                                    <td>{{ ministerio.nome }}</td>
+                                    <td>
+                                    	<button class="btn btn-warning">Editar</button>
+                                    	<button class="btn btn-danger">Excluir</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.table-responsive -->
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+     </div>
+
